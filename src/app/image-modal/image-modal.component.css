@@ -1,0 +1,34 @@
+/* image-modal.component.css */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  height: 80%; /* Ajusta la altura según tus necesidades */
+  max-width: 600px; /* Puedes ajustar el tamaño máximo del modal */
+  max-height: 600px; /* Puedes ajustar el tamaño máximo del modal */
+  background-color: rgb(0, 0, 0); /* Agrega un fondo blanco para el contenedor de la imagen */
+  padding: 20px; /* Añade un poco de relleno */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra para un mejor contraste */
+  border-radius: 8px; /* Añade bordes redondeados si lo deseas */
+}
+
+img {
+  transition: transform 0.2s ease;
+  max-width: 110%; /* Asegúrate de que la imagen no se desborde del contenedor */
+  max-height: 110%; /* Asegúrate de que la imagen no se desborde del contenedor */
+}
+
+/* Modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}

@@ -1,0 +1,20 @@
+<!-- image-modal.component.html -->
+<div class="modal" [class.show]="visible" tabindex="-1" style="display: block;" *ngIf="producto">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ producto.nombre }}</h5>
+        <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <button class="zoom-in" (click)="zoomIn()"><i class="fa-solid fa-plus"></i></button>
+        <button class="reset-zoom" (click)="resetZoom()"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+        <button class="zoom-out" (click)="zoomOut()"><i class="fa-solid fa-minus"></i></button>
+        <div class="image-container">
+          <img [src]="producto.imagen" class="img-fluid" alt="Imagen del producto" [style.transform]="'scale(' + zoomLevel + ')'"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-backdrop fade show" *ngIf="visible"></div>

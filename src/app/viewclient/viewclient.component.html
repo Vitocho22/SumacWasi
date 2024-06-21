@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row card-container">
+    <div *ngFor="let producto of productos" class="col-6 col-md-4 col-lg-2 mb-4"> <!-- Ajusta las clases para 5 columnas por fila -->
+      <div class="card">
+        <img *ngIf="producto.imagen" [src]="producto.imagen" class="card-img-top" alt="Imagen del producto" (click)="openModal(producto)">
+        <svg *ngIf="!producto.imagen" class="bd-placeholder-img card-img-top" width="100%" height="120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false" (click)="openModal(producto)">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96"></rect>
+          <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+        </svg>
+        <div class="card-body">
+          <h5 class="card-title">{{ producto.nombre }}</h5>
+          <p class="card-text"><strong>Categoria:</strong> {{ producto.descripcion }}</p>
+          <p class="card-text"><strong>Descripcion: </strong> {{ producto.categoria }}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Precio: </strong>S/ {{ producto.precio }}</li>
+          <li class="list-group-item">Mas informacion al</li>
+          <li class="list-group-item"><i class="fa-brands fa-whatsapp"></i><strong>+51 964596020</strong></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<app-image-modal [producto]="selectedProducto" [visible]="!!selectedProducto" (close)="closeModal()"></app-image-modal>

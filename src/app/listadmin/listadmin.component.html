@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+          <div class="form-wrapper card">
+              <div class="card-body text-center">
+                  <span class="titulo">LISTADO DE PRODUCTOS</span>
+                  <button class="btn btn-success float-end" routerLink="/crearproducto">Nuevo</button>
+                  <table class="table table-striped table-hover mt-3">
+                      <thead>
+                        <tr>
+                          <th scope="col">Producto</th>
+                          <th scope="col">Descripcion</th>
+                          <th scope="col">Categoria</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Imagen</th> <!-- Columna para la imagen -->
+                          <th scope="col">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr *ngFor="let producto of productos">
+                          <td>{{ producto.nombre }}</td>
+                          <td>{{ producto.descripcion }}</td>
+                          <td>{{ producto.categoria }}</td>
+                          <td>{{ producto.precio }}</td>
+                          <td>
+                            <!-- Mostrar imagen si existe -->
+                            <img *ngIf="producto.imagen" [src]="producto.imagen" alt="Imagen del producto" class="img-fluid" style="max-width: 100px;" (click)="openModal(producto)">
+                          </td>
+                          <td>
+                            <i *ngIf="producto.id !== null" (click)="deleteProducto(producto.id)" class="fa-solid fa-trash text-danger"></i>
+                            <i *ngIf="producto.id !== null" (click)="editProducto(producto.id)" class="fa-solid fa-pen-to-square text-primary"></i>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<app-image-modal [producto]="selectedProducto" [visible]="!!selectedProducto" (close)="closeModal()"></app-image-modal>

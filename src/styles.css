@@ -1,1 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
+.background-overlay {
+  background: url(https://img.freepik.com/foto-gratis/textura-madera-mirando-fondo-cesped_23-2147701307.jpg?w=740&t=st=1717806777~exp=1717807377~hmac=c42934db4ee29e12ad611d5ac3374b998eb24abca2dca967cee15c96ab55909b) no-repeat center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+
+.background-overlay::before{
+  background-color: rgba(0, 0, 0, 0.6);
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

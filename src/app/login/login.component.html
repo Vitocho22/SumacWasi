@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-3 offset-lg-1 mx-auto">
+      <div class="form-wrapper card">
+        <div class="card-body text-left">
+          <form class="login-form mt-3">
+            <div class="mb-3">
+              <label for="dniInput" class="form-label">DNI</label>
+              <input [(ngModel)]="dni" name="dni" type="text" class="form-control" id="dniInput">
+            </div>
+            <div class="mb-3">
+              <label for="passwordInput" class="form-label">Password</label>
+              <input [(ngModel)]="password" name="password" type="password" class="form-control" id="passwordInput">
+            </div>
+            <div class="d-grid gap-2 col-6 mx-auto">
+              <button type="button" class="btn btn-primary" (click)="login()">Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
