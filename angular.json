@@ -34,7 +34,7 @@
               {
                 "glob": "**/*",
                 "input": "public",
-                "output": "src/_redirects"
+                "output": "/"
               }
             ],
             "styles": [
